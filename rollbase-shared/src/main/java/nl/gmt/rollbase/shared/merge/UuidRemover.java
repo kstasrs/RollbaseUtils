@@ -8,7 +8,7 @@ import nl.gmt.rollbase.shared.schema.Application;
 import nl.gmt.rollbase.shared.schema.Properties;
 import nl.gmt.rollbase.shared.schema.RbNode;
 import nl.gmt.rollbase.shared.schema.SchemaUtils;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 import java.util.*;
 

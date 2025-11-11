@@ -3,8 +3,9 @@ package nl.gmt.rollbase.shared.merge;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.HiddenFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
-import org.apache.commons.lang.Validate;
-import org.jboss.logging.Logger;
+import org.apache.commons.lang3.Validate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.Closeable;
 import java.io.File;
@@ -14,7 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FileWriter implements Closeable {
-    private static final Logger LOG = Logger.getLogger(FileWriter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FileWriter.class);
 
     private final File target;
     private final Set<File> files = new HashSet<>();
@@ -43,13 +44,13 @@ public class FileWriter implements Closeable {
             String currentContent = FileUtils.readFileToString(target);
 
             if (currentContent.equals(content)) {
-                LOG.infof("Skipping unchanged file '%s'", target);
+                LOG.info("Skipping unchanged file '{}'", target);
 
                 return;
             }
         }
 
-        LOG.infof("Writing '%s'", target);
+        LOG.info("Writing '{}'", target);
 
         FileUtils.write(target, content, "UTF-8");
     }

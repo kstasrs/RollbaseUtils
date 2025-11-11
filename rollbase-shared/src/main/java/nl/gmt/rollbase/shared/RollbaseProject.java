@@ -6,9 +6,9 @@ import nl.gmt.rollbase.shared.merge.schema.ApplicationVersions;
 import nl.gmt.rollbase.shared.merge.schema.MergeSchemaUtils;
 import nl.gmt.rollbase.shared.schema.Application;
 import nl.gmt.rollbase.shared.schema.SchemaUtils;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;

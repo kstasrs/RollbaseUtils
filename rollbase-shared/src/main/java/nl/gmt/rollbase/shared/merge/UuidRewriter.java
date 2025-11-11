@@ -4,7 +4,7 @@ import nl.gmt.rollbase.shared.RollbaseException;
 import nl.gmt.rollbase.shared.merge.schema.ApplicationVersion;
 import nl.gmt.rollbase.shared.schema.Application;
 import nl.gmt.rollbase.shared.schema.SchemaUtils;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 import java.util.UUID;
 

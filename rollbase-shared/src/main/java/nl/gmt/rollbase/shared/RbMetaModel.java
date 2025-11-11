@@ -2,7 +2,7 @@ package nl.gmt.rollbase.shared;
 
 import nl.gmt.rollbase.shared.schema.RbKnownProperties;
 import nl.gmt.rollbase.shared.schema.RbNode;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 import java.lang.reflect.Method;
 import java.util.*;

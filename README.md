@@ -1,11 +1,69 @@
 # Rollbase Utilities
 
+[![Java CI with Maven](https://github.com/kstasrs/RollbaseUtils/actions/workflows/maven.yml/badge.svg)](https://github.com/kstasrs/RollbaseUtils/actions/workflows/maven.yml)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](License.txt)
+[![Java Version](https://img.shields.io/badge/Java-17%2B-brightgreen.svg)](https://openjdk.org/)
+
 LGPL License.
 
 ## Introduction
 
 The Rollbase Utilities project provides utilities for working with Rollbase. This project consists of a number of
-sub projects, which provide different functions.
+sub-projects, which provide different functions.
+
+## Quick Start
+
+### Prerequisites
+
+- **Java 17 or higher** - [Download OpenJDK](https://adoptium.net/)
+- **Maven 3.6+** - [Download Maven](https://maven.apache.org/download.cgi)
+
+### Building from Source
+
+```bash
+# Clone the repository
+git clone https://github.com/kstasrs/RollbaseUtils.git
+cd RollbaseUtils
+
+# Build all modules
+cd rollbase-shared-annotations && mvn clean install && cd ..
+cd rollbase-shared && mvn clean install && cd ..
+cd rollbase-merge && mvn clean install && cd ..
+```
+
+The executable JAR with all dependencies will be located at:
+```
+rollbase-merge/target/rollbase-merge-0.3-SNAPSHOT-jar-with-dependencies.jar
+```
+
+### Usage
+
+#### Load Command
+Load a Rollbase project and create an XML Application export:
+
+```bash
+java -jar rollbase-merge-jar-with-dependencies.jar load \
+  -p /path/to/project \
+  -t /path/to/output.xml \
+  -v
+```
+
+#### Save Command
+Save an XML Application export into the version control repository:
+
+```bash
+java -jar rollbase-merge-jar-with-dependencies.jar save \
+  -p /path/to/project \
+  -s /path/to/input.xml \
+  -vv
+```
+
+#### Options
+- `-p <path>` - Project directory (required)
+- `-t <path>` - Target file for load command
+- `-s <path>` - Source file for save command  
+- `-v` - Verbose mode (INFO level)
+- `-vv` - Very verbose mode (DEBUG level)
 
 ## Rollbase XSD Schema
 
@@ -110,6 +168,34 @@ will make sure that the application ID in Rollbase is in sync with the applicati
 in your export project.
 
 # Issues
+
+## Version 0.3 Modernization
+
+This fork has been modernized with the following improvements:
+
+### Technology Stack Updates
+- **Java 17** (from Java 1.7) - Modern language features and performance
+- **Jakarta EE 9+** - Updated from legacy javax namespace
+- **SLF4J + Logback** - Modern logging framework (replaced Log4j 1.x)
+- **JUnit 5** - Ready for migration (currently JUnit 4 tests exist)
+- **Maven plugins** - All updated to latest stable versions
+
+### Code Quality Improvements
+- Comprehensive JavaDoc documentation
+- Modern Java syntax (var, switch expressions, try-with-resources)
+- Security vulnerability scanning (all dependencies verified)
+- GitHub Actions CI/CD pipeline
+- Updated dependencies: commons-lang3 3.14.0, commons-io 2.15.1, ASM 9.6
+
+### Distribution
+The merge application can now be built as a standalone JAR with all dependencies using:
+```bash
+mvn clean package
+```
+
+The executable JAR is located in `rollbase-merge/target/rollbase-merge-0.3-SNAPSHOT-jar-with-dependencies.jar`
+
+## Known Issues (From Original Repository)
 
 This project currently is in alpha state and there will be issues. If you find any problems with the libraries or
 tools provided by this project, please create a new issue in the

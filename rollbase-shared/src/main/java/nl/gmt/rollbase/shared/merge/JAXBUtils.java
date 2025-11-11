@@ -1,8 +1,8 @@
 package nl.gmt.rollbase.shared.merge;
 
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.util.JAXBSource;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.util.JAXBSource;
 import javax.xml.transform.*;
 
 public class JAXBUtils {
