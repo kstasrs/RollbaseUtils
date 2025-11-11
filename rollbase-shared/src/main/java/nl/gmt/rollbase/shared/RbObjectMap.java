@@ -3,13 +3,14 @@ package nl.gmt.rollbase.shared;
 import nl.gmt.rollbase.shared.merge.UuidRewriter;
 import nl.gmt.rollbase.shared.schema.*;
 import nl.gmt.rollbase.shared.schema.Properties;
-import org.apache.commons.lang.Validate;
-import org.jboss.logging.Logger;
+import org.apache.commons.lang3.Validate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
 public class RbObjectMap {
-    private static final Logger LOG = Logger.getLogger(RbObjectMap.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RbObjectMap.class);
     private static final Set<String> IGNORE_ID_DETECTION = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
         "Id", "OrigId", "OrderNo", "PageType"
     )));
@@ -111,8 +112,8 @@ public class RbObjectMap {
                                 if (SchemaUtils.looksLikeIdList((String)value, idMode)) {
                                     for (String id : SchemaUtils.parseIdList(node, accessor, idMode)) {
                                         if (this.ids.contains(id)) {
-                                            LOG.warnf(
-                                                "Property '%s' of element '%s' has a value '%s' that looks like an ID",
+                                            LOG.warn(
+                                                "Property '{}' of element '{}' has a value '{}' that looks like an ID",
                                                 accessor.getName(),
                                                 node.getClass().getName(),
                                                 value

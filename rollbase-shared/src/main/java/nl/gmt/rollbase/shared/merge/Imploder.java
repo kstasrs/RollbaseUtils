@@ -9,11 +9,12 @@ import nl.gmt.rollbase.shared.schema.SchemaUtils;
 import org.apache.commons.io.IOCase;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.Validate;
-import org.jboss.logging.Logger;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 import java.io.File;
 import java.util.*;
 
@@ -24,7 +25,7 @@ public class Imploder {
         MergeSchemaUtils.FILE_NAME
     ));
 
-    private static final Logger LOG = Logger.getLogger(Imploder.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Imploder.class);
 
     @SuppressWarnings("unchecked")
     public Application implode(File source) throws RollbaseException {
@@ -152,7 +153,7 @@ public class Imploder {
 
     @SuppressWarnings("unchecked")
     private Object load(File file) throws JAXBException {
-        LOG.infof("Loading '%s'", file);
+        LOG.info("Loading '{}'", file);
 
         return SchemaUtils.createUnmarshaller().unmarshal(file);
     }

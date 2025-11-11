@@ -1,6 +1,6 @@
 package nl.gmt.rollbase.shared.merge;
 
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 import java.util.UUID;
 

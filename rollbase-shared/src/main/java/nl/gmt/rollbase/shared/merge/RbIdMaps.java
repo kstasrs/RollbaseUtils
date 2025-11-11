@@ -2,7 +2,7 @@ package nl.gmt.rollbase.shared.merge;
 
 import nl.gmt.rollbase.shared.merge.schema.ApplicationVersion;
 import nl.gmt.rollbase.shared.merge.schema.ApplicationVersions;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 import java.util.*;
 

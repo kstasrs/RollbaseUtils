@@ -6,9 +6,9 @@ import nl.gmt.rollbase.shared.RbWalker;
 import nl.gmt.rollbase.shared.RollbaseException;
 import nl.gmt.rollbase.shared.schema.*;
 import nl.gmt.rollbase.shared.schema.Process;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import java.util.*;
 
 class MergeUtils {

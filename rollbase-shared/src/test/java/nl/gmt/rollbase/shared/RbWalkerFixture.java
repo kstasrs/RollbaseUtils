@@ -1,7 +1,7 @@
 package nl.gmt.rollbase.shared;
 
 import nl.gmt.rollbase.shared.schema.*;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;

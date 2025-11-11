@@ -5,7 +5,7 @@ import nl.gmt.rollbase.shared.merge.schema.*;
 import nl.gmt.rollbase.shared.schema.*;
 import nl.gmt.rollbase.shared.schema.Properties;
 import nl.gmt.rollbase.shared.schema.SchemaUtils;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 import java.util.*;
 

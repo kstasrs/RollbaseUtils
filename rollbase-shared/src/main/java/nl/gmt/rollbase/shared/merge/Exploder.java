@@ -3,10 +3,10 @@ package nl.gmt.rollbase.shared.merge;
 import nl.gmt.rollbase.shared.*;
 import nl.gmt.rollbase.shared.schema.*;
 import nl.gmt.rollbase.shared.schema.Properties;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.w3c.dom.Element;
 
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;

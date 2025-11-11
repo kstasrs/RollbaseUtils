@@ -2,7 +2,7 @@ package nl.gmt.rollbase.shared;
 
 import nl.gmt.rollbase.shared.schema.RbId;
 import nl.gmt.rollbase.shared.schema.RbIdType;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
